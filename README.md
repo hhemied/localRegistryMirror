@@ -78,5 +78,5 @@ docker pull busybox
 3. Keep everything internal and under control.
 
 > Good References:
-    *  https://docs.docker.com/registry/recipes/mirror/
-    *  https://cloud.google.com/container-registry/docs/using-dockerhub-mirroring
+* https://docs.docker.com/registry/recipes/mirror/
+*  https://cloud.google.com/container-registry/docs/using-dockerhub-mirroring
