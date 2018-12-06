@@ -59,11 +59,11 @@ $ curl https://<your local registry IP|Hostname|LB name>/v2/_catalog
 "registry-mirrors": ["https://<your local registry IP|Hostname|LB name>"]
 }
 ```
-2. 
+2. Reload systemd
 ```bash
 sudo systemctl daemon-reload
 ```
-3. 
+3. Restart docker daemon
 ```bash
 sudo systemctl restart docker
 ```
