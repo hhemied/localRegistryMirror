@@ -82,5 +82,5 @@ docker pull busybox
 *  https://cloud.google.com/container-registry/docs/using-dockerhub-mirroring
 
 ## NOTE:
-##### Many ways to create the registry mirror, I tried to choose the easy and efficient way for that.
-##### Comment and advice are welcome
+##### **** Many ways to create the registry mirror, I tried to choose the easy and efficient way for that.
+##### **** Comment and advice are welcome
