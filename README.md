@@ -59,10 +59,12 @@ $ curl https://<your local registry IP|Hostname|LB name>/v2/_catalog
 "registry-mirrors": ["https://<your local registry IP|Hostname|LB name>"]
 }
 ```
-2. ```bash
+2. 
+```bash
 sudo systemctl daemon-reload
 ```
-3. ```bash
+3. 
+```bash
 sudo systemctl restart docker
 ```
 4. Now try to pull images from external repos
