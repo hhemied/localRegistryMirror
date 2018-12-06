@@ -2,11 +2,11 @@
 ###### Simply this is how to create a local registry mirror to reflect a public register to pull images through it and from public sectors and store them in centeralized storage.
 
 ### Why?
-###### If you running a production environment you normally use proxy servers to access the public world and this is for security resons, but you might noticed that with a proxy configuration in docker daemon [/etc/systemd/system/docker.service.d/httpd-proxy.conf], many issues start to be present in the docker nodes behavior, specially:
+###### If you running Docker-ce in a production environment you normally use proxy servers to access the public world and this is for security resons, but you might noticed that with a proxy configuration in docker daemon [/etc/systemd/system/docker.service.d/httpd-proxy.conf], many issues start to be present in the docker nodes behavior, specially:
 > Once You need to demote a manager, you will not be able to promote it back.
 
 ### Root Cause:
-###### Update to gRPC Liberary, starting from docker version 17.08
+###### Update to gRPC Liberary, starting from docker version 17.08-ce
 
 ### Solutions for this issue are:
 1. Adding managers IPs to Managers nodes by IPs and not hostnames to NO_PROXY in [/etc/systemd/system/docker.service.d/httpd-proxy.conf]
@@ -32,7 +32,7 @@ services:
       - /var/lib/docker/registry:/var/lib/registry # Better to use a centerlaized storage
     restart: always
 ```
-###### Then: run this docker-compose.yml and you are ready to GO :sparkles: :octocat:
+###### Then: run this docker-compose.yml and you are ready to GO :+1: :metal:
 1. Run this command in the directory where you saved your docker-compose.yml file in
 ```bash
 sudo docker-compose up -d
@@ -43,3 +43,10 @@ sudo docker-compose up -d
     ```bash
     sudo docker stack deploy --compose-file docker-compose.yml registry
     ```
+
+#### Monitor you local registry mirror repository:
+```bash
+$ curl https://<your local registry IP|Hostname|LB name>/v2/_catalog
+{"repositories":["library/busybox","library/centos","library/hello-world"]}
+```
+> NOTE: You might need to use the port as well to check the repsitory.
